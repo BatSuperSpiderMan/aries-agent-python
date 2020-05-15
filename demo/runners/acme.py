@@ -103,6 +103,7 @@ class AcmeAgent(DemoAgent):
         if state == "presentation_received":
              log_status("#27 Process the proof provided by X")
             log_status("#28 Check if proof is valid")
+            
             proof = await self.admin_POST(
                 f"/present-proof/records/{presentation_exchange_id}/verify-presentation"
             )
