@@ -200,7 +200,7 @@ async def main(
         with log_timer("Generate invitation duration:"):
             # Generate an invitation
             log_status(
-                "#7 Create a connection to alice and print out the invite details"
+                "#7 Create a connection to Thapelo and print out the invite details"
             )
             connection = await agent.admin_POST("/connections/create-invitation")
 
@@ -252,10 +252,10 @@ async def main(
 
                 # TODO define attributes to send for credential
                 agent.cred_attrs[credential_definition_id] = {
-                    "name": "Alice Smith",
-                    "date": "2018-05-28",
-                    "degree": "Maths",
-                    "age": "24",
+                    "name": "Thapelo Sekwena",
+                    "date": "2020-06-01",
+                    "degree": "MBA",
+                    "age": "26",
                     "timestamp": str(int(time.time())),
                 }
 
@@ -278,7 +278,7 @@ async def main(
                 # TODO issue an additional credential for Student ID
 
             elif option == "2":
-                log_status("#20 Request proof of degree from alice")
+                log_status("#20 Request proof of degree from Thapelo")
                 req_attrs = [
                     {"name": "name", "restrictions": [{"issuer_did": agent.did}]},
                     {"name": "date", "restrictions": [{"issuer_did": agent.did}]},
